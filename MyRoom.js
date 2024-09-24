@@ -2,9 +2,7 @@ const { Room } = require('colyseus');
 
 class MyRoom extends Room {
     onCreate(options) {
-        this.setState({
-            players: {}
-        });
+        this.setState({ players: {} });
 
         this.onMessage("move", (client, message) => {
             const player = this.state.players[client.sessionId];
@@ -13,7 +11,6 @@ class MyRoom extends Room {
                 player.y = message.y;
                 player.z = message.z;
 
-                // Broadcast player movement to all other clients
                 this.broadcast("playerMove", {
                     sessionId: client.sessionId,
                     name: message.name,  // Avatar_1 or Avatar_2
@@ -31,7 +28,7 @@ class MyRoom extends Room {
     }
 
     onLeave(client) {
-        delete this.state.players[client.sessionId];  // Remove player when they leave
+        delete this.state.players[client.sessionId];
     }
 }
 
