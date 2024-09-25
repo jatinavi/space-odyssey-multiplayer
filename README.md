@@ -104,12 +104,6 @@ To deploy the project, you will need:
 
 ---
 
-## **Playable Weblink**
-You can access the playable game via this link:
-[**Play Multiplayer Space Odyssey**](#)  
-*(Replace the # with your PlayCanvas hosted link)*
-
----
 
 ## **Credits**
 - **Game Engine**: [PlayCanvas](https://playcanvas.com/)
